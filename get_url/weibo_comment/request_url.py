@@ -5,6 +5,12 @@ BeautifulSoup 安装 https://www.cnblogs.com/sunnywss/p/6640154.html
 程序参考：
 https://blog.csdn.net/Lammonpeter/article/details/52917264
 https://www.cnblogs.com/xinyangsdut/p/7625714.html
+
+走饭微博
+https://www.weibo.com/1648007681/yark9qWbM?type=comment
+评论url
+https://weibo.com/aj/v6/comment/big?ajwvr=6&id=3424883176420210&page=2&__rnd=1554081087043
+
 """
 import requests
 from bs4 import BeautifulSoup
@@ -13,6 +19,7 @@ import random
 # 禁止warning，不加会有https安全提示
 requests.packages.urllib3.disable_warnings()
 
+# 修改cookie 从chrome控制台获取
 cookie = 'SUB=_2AkMsth9Mf8NxqwJRmP4Tz2jlbYt1yQDEieKa6u6XJRMxHRl-yT83qnwltRB6BzYxowKwERot0p6914E3L2RPl6x3K7XV; ' \
          'SUBP=0033WrSXqPxfM72-Ws9jqgMF55529P9D9Wh4kL089PFpmGGcbvae8BUA; YF-V5-G0=aac25801fada32565f5c5e59c7bd227b; ' \
          'YF-Page-G0=b1e3c8e8ad37eca95b65a6759b3fc219|1554081013|1554081001; Ugrow-G0=8751d9166f7676afdce9885c6d31cd61 '
@@ -64,7 +71,7 @@ def get_url(url, proxy):
 
 if __name__ == '__main__':
     comment = open('comment_cache', 'wb+')
-    for i in range(80000, 80001):
+    for i in range(2, 80001):
         base_url = 'https://weibo.com/aj/v6/comment/big?ajwvr=6&id=3424883176420210&page=' \
                    + str(i) + '&__rnd=1554081087043'
         content = get_url(base_url, None)
