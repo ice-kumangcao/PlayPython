@@ -1,5 +1,10 @@
 """
 遗传算法求解2*sin(x) + cos(x)最大值
+
+代码来源，python代码有些许问题
+https://blog.csdn.net/quinn1994/article/details/80501542
+参考
+https://www.cnblogs.com/adelaide/articles/5679475.html
 """
 import random
 import math
